@@ -1,88 +1,80 @@
-# Number-Classification
+# MNIST Neural Network From Scratch
 
-MNIST Neural Network From Scratch 
+<p align="center">
+  <strong>A feed-forward neural network built entirely from scratch using NumPy — no TensorFlow or PyTorch for training</strong>
+</p>
 
-This project implements a feed-forward neural network from scratch in NumPy, trained and tested on the MNIST handwritten digits dataset. It demonstrates how fundamental components of deep learning — forward propagation, backpropagation, activation functions, dropout, and optimizers — work behind the scenes without relying on high-level frameworks like TensorFlow or PyTorch.
+<p align="center">
+  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy"/>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge" alt="Matplotlib"/>
+</p>
 
-Features
+---
 
-Manual implementation of:
+## Overview
 
-Forward and Backward Propagation
+This project implements a complete neural network from scratch using only NumPy, trained on the MNIST handwritten digits dataset. It demonstrates how fundamental deep learning components — forward propagation, backpropagation, activation functions, dropout, and optimizers — work under the hood.
 
-Sigmoid and ReLU activations
+**Achieves 90%+ accuracy** on MNIST test data with simple hyperparameters.
 
-Softmax output layer
+## Implemented From Scratch
 
-Cross-Entropy loss
+- Forward and Backward Propagation
+- Sigmoid and ReLU activation functions
+- Softmax output layer
+- Cross-Entropy loss function
+- Dropout regularization
+- SGD and Momentum optimizers
+- Training progress visualization
 
-Dropout regularization
+## How It Works
 
-SGD and Momentum optimizers
+1. **Data Loading & Preprocessing** — Loads MNIST from Keras, normalizes pixel values, one-hot encodes labels
+2. **Network Construction** — Custom `NeuralNetwork` class with configurable hidden layers, activations, and dropout
+3. **Training** — Batch training with SGD or Momentum optimizer, logging loss and accuracy per epoch
+4. **Visualization** — Plots training loss and accuracy curves using Matplotlib
 
-Visualized training progress with Matplotlib
-
-Achieves over 90% accuracy on MNIST test data with simple hyperparameters
-
-How It Works
-
-Data Loading & Preprocessing – Loads MNIST from Keras, normalizes pixel values, and one-hot encodes labels.
-
-Neural Network Construction – Custom NeuralNetwork class with configurable hidden layers, activation functions, and dropout; supports ReLU or Sigmoid activations with Softmax output.
-
-Training – Uses SGD or Momentum optimizers; performs batch training and logs loss, training accuracy, and test accuracy per epoch.
-
-Visualization – Plots training loss and accuracy curves using Matplotlib.
-
-Example Results
+## Results
 
 Typical output after ~200 epochs:
 
+```
 Epoch 200: Loss = 0.2435, Train Acc = 0.9365, Test Acc = 0.9268
+```
 
+## Requirements
 
-This confirms the correctness and efficiency of the backpropagation and training loop.
-
-Example Graphs
-
-Left: Training Loss  Right: Training vs Testing Accuracy
-(After running, Matplotlib automatically displays these graphs.)
-
-Requirements
+```
 numpy
 matplotlib
 keras
 tensorflow
+```
 
+```bash
+pip install numpy matplotlib keras tensorflow
+```
 
-Install dependencies:
+## Usage
 
-pip install -r requirements.txt
+```bash
+python Code.py
+```
 
-How to Run
-python mnist_nn.py
+Prints epoch-by-epoch loss and accuracy, then displays training curves in a Matplotlib window.
 
+## Key Learnings
 
-You’ll see printed logs of each epoch’s loss and accuracy, followed by training curves in a Matplotlib window.
+- Built a functional neural network entirely from scratch using NumPy
+- Learned how optimizers, dropout, and activations affect performance
+- Gained deeper understanding of gradient flow and convergence
 
-Key Learnings
-
-Built a functional neural network entirely from scratch using NumPy
-
-Learned how optimizers, dropout, and activations affect performance
-
-Gained deeper understanding of gradient flow and convergence
-
-Contributors
-
-Soliman Zakaria – Core development, architecture design, and training pipeline
-
-License
+## License
 
 MIT License — feel free to use, modify, and share with attribution.
 
-Acknowledgments
+## Acknowledgments
 
-MNIST dataset from Yann LeCun’s Database
-
-Keras for dataset loading utilities
+- [MNIST dataset](http://yann.lecun.com/exdb/mnist/) by Yann LeCun
+- Keras for dataset loading utilities
